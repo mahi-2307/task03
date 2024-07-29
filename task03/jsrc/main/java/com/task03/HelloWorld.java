@@ -32,7 +32,7 @@ public class HelloWorld implements RequestHandler<APIGatewayV2HTTPEvent, APIGate
 					? event.getRequestContext().getHttp().getMethod()
 					: null;
 
-			if ("hello".equals(requestPath) && "GET".equalsIgnoreCase(httpMethod)) {
+			if ("/hello".equals(requestPath) && "GET".equalsIgnoreCase(httpMethod)) {
 				response = APIGatewayV2HTTPResponse.builder()
 						.withStatusCode(200)
 						.withBody("{\"statusCode\": 200, \"message\": \"Hello from Lambda\"}")
